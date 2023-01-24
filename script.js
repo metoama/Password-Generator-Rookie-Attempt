@@ -29,7 +29,7 @@ if (passwordLength<8 || passwordLength>128) {
 return generatePassword();
 }
 
-}
+
 var lowercaseConfirm = confirm("Would you like password to contain lowercase characters?");
 var uppercaseConfirm = confirm("Would you like password to contain uppercase characters?");
 var numCharConfirm = confirm("Would you like to make password more secure? How about adding numbers? ");
@@ -43,18 +43,19 @@ if (uppercaseConfirm) {selection += uppercase;}
 
 
 
-if (numCharConfirm) {selection += numCharConfirm;}
+if (numCharConfirm) {selection += numChar;}
 
 
 
-if (specCharConfirm) {selection += specCharConfirm;}
+if (specCharConfirm) {selection += specChar;}
 
 
 
 for (var i=0; i<passwordLength; i++){
   password = selection[Math.floor(Math.random() * selection.length)];
 }
+return result;
 
-
+}
 
 generateBtn.addEventListener("click", writePassword);
